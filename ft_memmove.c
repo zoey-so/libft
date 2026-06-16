@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	*ft_memmove(void *s1, const void *s2, size_t n)
+{
+	const char	*src;
+	char		*dst;
+
+	src = s2;
+	dst = s1;
+	if (src < dst)
+	{
+		src += n - 1;
+		dst += n - 1;
+		while (n-- > 0)
+			*dst-- = *src--;
+	}
+	else
+	{
+		while (n-- > 0)
+			*dst++ = *src++;
+	}
+	return (s1);
+}
