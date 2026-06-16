@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*strchr(const char *str, int ch)
+{
+	if (*str == (char)ch)
+		return ((char *)str);
+	while (str++)
+	{
+		if (*str == (char)ch)
+			return ((char *)str);
+	}
+	return ((char *) NULL);
+}
