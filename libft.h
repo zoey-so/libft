@@ -7,9 +7,9 @@
 
 
 # define FT_A	(1 << 0)
-# define FT_D	(2 << 0)
-# define FT_P	(3 << 0)
-# define FT_S	(4 << 0)
+# define FT_D	(1 << 1)
+# define FT_P	(1 << 2)
+# define FT_S	(1 << 3)
 # define CTYPE_NUM_CHARS	256
 extern const unsigned char	g_lup[1 + CTYPE_NUM_CHARS];
 # define ft_isalpha(c)	((g_lup[(unsigned char)(c + 1)] & FT_A) != 0)
@@ -36,4 +36,5 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t slen);
 char	*ft_strrchr(const char *p, int ch);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_strchr(const char *p, int ch);
 #endif

@@ -23,12 +23,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	{
 		while (--left_size)
 		{
-			*(dest++) = *(src++);
 			if (*src == '\0')
 			{
 				*dest++ = *src++;
 				break ;
 			}
+			*(dest++) = *(src++);
 		}
 	}
 	if (!left_size)
