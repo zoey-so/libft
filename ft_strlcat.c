@@ -18,20 +18,20 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dsize)
 	char	*dest_cp;
 
 	dest_cp = dest;
-	while (*dest && size)
+	while (*dest && dsize)
 	{
 		dest++;
-		size--;
+		dsize--;
 	}
 	r_len = dest - dest_cp;
-	if (!size)
+	if (!dsize)
 		return (r_len + ft_strlen(src));
 	while (*src)
 	{
-		if (size - 1)
+		if (dsize - 1)
 		{
 			*(dest++) = *src;
-			size--;
+			dsize--;
 		}
 		src++;
 		r_len++;
