@@ -1,7 +1,7 @@
 #include "libft_bonus.h"
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*res;
 	const char	*beg;
@@ -12,7 +12,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	if (!set || !*set || !*s1)
 		return (ft_strdup(s1));
 	beg = s1;
-	while (ft_strchr(set, *beg))
+	while (*beg && ft_strchr(set, *beg))
 		beg++;
 	if (*beg == '\0')
 		return (ft_strdup("\0"));
