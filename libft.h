@@ -43,4 +43,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr(const char *p, int ch);
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 #endif
