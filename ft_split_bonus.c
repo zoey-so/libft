@@ -21,7 +21,7 @@ static size_t	ft_count_strs(char const *s, char c)
 static char	**ft_fill_strs(char **res, const char *s, char c)
 {
 	const char	*w_end;
-	int		i;
+	int			i;
 
 	i = 0;
 	while (*s)
@@ -47,7 +47,7 @@ static char	**ft_fill_strs(char **res, const char *s, char c)
 	return (res);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	strs_n;

@@ -2,11 +2,11 @@
 #include "libft.h"
 #include <limits.h>
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char	*res;
+	char		*res;
 	long int	nb;
-	size_t	len;
+	size_t		len;
 
 	len = 0;
 	nb = (((long int)n >> 31) ^ ((long int)n)) - ((long int)n >> 31);
@@ -28,4 +28,3 @@ char *ft_itoa(int n)
 		res[0] = '-';
 	return (res);
 }
-
