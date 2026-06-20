@@ -19,7 +19,7 @@ $(NAME): $(OBJECTS)
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJECTS) $(BON_OBJ)
+bonus: $(OBJECTS) $(BON_OBJ) libft_bonus.h
 	ar rcs $(NAME) $(OBJECTS) $(BON_OBJ)
 
 clean:
