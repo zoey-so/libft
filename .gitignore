@@ -55,10 +55,10 @@ dkms.conf
 *.dwo
 
 #test files
-*test*
+*_test.c
 
 #files that became macros
-u_*.c
+u_*
 
 #shell scripts
 *.sh
