@@ -3,20 +3,24 @@
 
 # include <stdlib.h>
 
+// t_list def
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
+// macros for lookup variables
 # define FT_A	(1 << 0)
 # define FT_D	(1 << 1)
 # define FT_P	(1 << 2)
 # define FT_S	(1 << 3)
 # define CTYPE_NUM_CHARS	256
 
+// lookup table for ctype functions
 extern const unsigned char	g_lup[1 + CTYPE_NUM_CHARS];
 
+// macros for ctype functions
 # define ft_isalpha(c)	((g_lup[(unsigned char)(c + 1)] & FT_A) != 0)
 # define ft_isdigit(c)	((g_lup[(unsigned char)(c + 1)] & FT_D) != 0)
 # define ft_isprint(c)	((g_lup[(unsigned char)(c + 1)] & FT_P) != 0)
@@ -24,6 +28,7 @@ extern const unsigned char	g_lup[1 + CTYPE_NUM_CHARS];
 # define ft_isalnum(c)	((g_lup[(unsigned char)(c + 1)] & (FT_A | FT_D)) != 0)
 # define ft_isascii(c)  (((c) & ~0x7F) == 0)
 
+// part one - libc
 int		ft_atoi(const char *str);
 void	ft_bzero(void *to, size_t count);
 void	*ft_calloc(size_t count, size_t size);
@@ -42,6 +47,21 @@ char	*ft_strrchr(const char *p, int ch);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr(const char *p, int ch);
+
+// part two
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
+// linked list functions
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

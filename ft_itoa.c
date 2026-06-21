@@ -1,6 +1,4 @@
-#include "libft_bonus.h"
 #include "libft.h"
-#include <limits.h>
 
 char	*ft_itoa(int n)
 {

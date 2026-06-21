@@ -1,4 +1,3 @@
-#include "libft_bonus.h"
 #include "libft.h"
 
 static size_t	ft_count_strs(char const *s, char c)
