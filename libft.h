@@ -17,7 +17,7 @@ typedef struct s_list
 # define FT_S	(1 << 3)
 # define CTYPE_NUM_CHARS	256
 
-// lookup table for ctype functions
+// lookup table for ctype functions - optimized for less calculation
 extern const unsigned char	g_lup[1 + CTYPE_NUM_CHARS];
 
 // macros for ctype functions

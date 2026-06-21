@@ -1,6 +1,7 @@
 #include "libft.h"
 
-const unsigned char g_lup[1 + CTYPE_NUM_CHARS] = {
+// global lookup table for ctype functions - minimise calculation
+const unsigned char	g_lup[1 + CTYPE_NUM_CHARS] = {
 	0,
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, FT_S, FT_S, FT_S, FT_S, FT_S, 0, 0,

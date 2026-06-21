@@ -13,6 +13,8 @@
 #include "libft.h"
 #include <stdio.h>
 
+// global lookup table for tolower function - minimise calculation
+
 const short	g_tolower_tab[1 + CTYPE_NUM_CHARS] = {
 	EOF,
 	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
