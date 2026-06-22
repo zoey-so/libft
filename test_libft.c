@@ -56,11 +56,6 @@ static void test_ctype_macros(void) {
         got = ft_isprint(c);
         TEST_ASSERT(got == expected,
                     "ft_isprint mismatch for c=");
-        /* ft_isspace */
-        expected = isspace((unsigned char)c) ? 1 : 0;
-        got = ft_isspace(c);
-        TEST_ASSERT(got == expected,
-                    "ft_isspace mismatch for c=");
         /* ft_isalnum */
         expected = isalnum((unsigned char)c) ? 1 : 0;
         got = ft_isalnum(c);
@@ -86,9 +81,6 @@ static void test_ctype_macros(void) {
         int exp_p = isprint((unsigned char)c) ? 1 : 0;
         int got_p = ft_isprint(c);
         TEST_ASSERT(got_p == exp_p, "ft_isprint with out-of-range");
-        int exp_s = isspace((unsigned char)c) ? 1 : 0;
-        int got_s = ft_isspace(c);
-        TEST_ASSERT(got_s == exp_s, "ft_isspace with out-of-range");
         int exp_al = isalnum((unsigned char)c) ? 1 : 0;
         int got_al = ft_isalnum(c);
         TEST_ASSERT(got_al == exp_al, "ft_isalnum with out-of-range");
@@ -345,7 +337,6 @@ static void test_strlcpy(void) {
             /* Fill both with known pattern */
             memset(dst1, 0x00, sizeof(dst1));
             memset(dst2, 0x00, sizeof(dst2));
-			printf("src = %s, size = %d\n", src, (int)size);
             size_t ret1 = ft_strlcpy(dst1, src, size);
 
             size_t ret2 = strlcpy(dst2, src, size);
@@ -357,8 +348,6 @@ static void test_strlcpy(void) {
                 TEST_ASSERT(memcmp(dst1, dst2, cmp_len) == 0,
                             "content mismatch");
             }
-			printf("my_ret = %d, org_ret = %d\nmy_dst = %s\nor_dst = %s\n", (int)ret1, (int)ret2, dst1, dst2);
-			printf("-----\n");
         }
     }
 }
@@ -399,8 +388,6 @@ static void test_strlcat(void) {
                 TEST_ASSERT(strcmp(dst1, init_s) == 0,
                             "ft_strlcat should not modify when size <= init_len");
             }
-			printf("my_ret = %d, org_ret = %d\nmy_dst = %s\nor_dst = %s\n", (int)ret1, (int)ret2, dst1, dst2);
-			printf("-----\n");
         }
     }
 }

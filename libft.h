@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smilch <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: smilch <smilch@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 14:51:33 by smilch            #+#    #+#             */
-/*   Updated: 2026/06/22 14:51:40 by smilch           ###   ########.fr       */
+/*   Updated: 2026/06/22 19:21:34 by smilch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-// macros for lookup variables
-# define FT_A	(1 << 0)
-# define FT_D	(1 << 1)
-# define FT_P	(1 << 2)
-# define FT_S	(1 << 3)
-# define CTYPE_NUM_CHARS	256
-
-// lookup table for ctype functions - optimized for less calculation
-extern const unsigned char	g_lup[1 + CTYPE_NUM_CHARS];
-
-// macros for ctype functions
-# define ft_isalpha(c)	((g_lup[(unsigned char)(c + 1)] & FT_A) != 0)
-# define ft_isdigit(c)	((g_lup[(unsigned char)(c + 1)] & FT_D) != 0)
-# define ft_isprint(c)	((g_lup[(unsigned char)(c + 1)] & FT_P) != 0)
-# define ft_isspace(c)	((g_lup[(unsigned char)(c + 1)] & FT_S) != 0)
-# define ft_isalnum(c)	((g_lup[(unsigned char)(c + 1)] & (FT_A | FT_D)) != 0)
-# define ft_isascii(c)  (((c) & ~0x7F) == 0)
 
 // part one - libc
 int		ft_atoi(const char *str);
@@ -72,6 +54,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_isprint(int c);
+int		ft_isdigit(int c);
+int		ft_isascii(int c);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
 
 // linked list functions
 t_list	*ft_lstnew(void *content);
