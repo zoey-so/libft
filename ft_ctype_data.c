@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ctype_data.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smilch <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/22 14:50:15 by smilch            #+#    #+#             */
+/*   Updated: 2026/06/22 14:50:15 by smilch           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // global lookup table for ctype functions - minimise calculation
+
 const unsigned char	g_lup[1 + CTYPE_NUM_CHARS] = {
 	0,
 	0, 0, 0, 0, 0, 0, 0, 0,

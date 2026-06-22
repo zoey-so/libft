@@ -7,6 +7,8 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <bsd/string.h>
+#include <stdint.h>
 #include "libft.h"
 
 // Global test helpers
