@@ -167,7 +167,7 @@ static void test_calloc(void) {
     }
     /* Test with huge allocation (should return NULL) */
     void *p = ft_calloc(SIZE_MAX, SIZE_MAX);
-    TEST_ASSERT(p == NULL, "ft_calloc should fail for huge size");
+    TEST_ASSERT(p == NULL, "ft_calloc should fail for over size_max");
 }
 
 //ft_memchr
