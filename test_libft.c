@@ -42,22 +42,22 @@ static void test_ctype_macros(void) {
     /* Test all values from -128 to 255 */
     for (c = -128; c <= 255; c++) {
         /* ft_isalpha */
-        int expected = isalpha((unsigned char)c) ? 1 : 0;
+        int expected = isalpha(c) ? 1 : 0;
         int got = ft_isalpha(c);
         TEST_ASSERT(got == expected,
                     "ft_isalpha mismatch for c=");
         /* ft_isdigit */
-        expected = isdigit((unsigned char)c) ? 1 : 0;
+        expected = isdigit(c) ? 1 : 0;
         got = ft_isdigit(c);
         TEST_ASSERT(got == expected,
                     "ft_isdigit mismatch for c=");
         /* ft_isprint */
-        expected = isprint((unsigned char)c) ? 1 : 0;
+        expected = isprint(c) ? 1 : 0;
         got = ft_isprint(c);
         TEST_ASSERT(got == expected,
                     "ft_isprint mismatch for c=");
         /* ft_isalnum */
-        expected = isalnum((unsigned char)c) ? 1 : 0;
+        expected = isalnum(c) ? 1 : 0;
         got = ft_isalnum(c);
         TEST_ASSERT(got == expected,
                     "ft_isalnum mismatch for c=");
@@ -72,16 +72,16 @@ static void test_ctype_macros(void) {
     int extra_vals[] = {300, -300, EOF, INT_MAX, INT_MIN};
     for (int i = 0; i < (int)(sizeof(extra_vals)/sizeof(extra_vals[0])); i++) {
         c = extra_vals[i];
-        int exp_a = isalpha((unsigned char)c) ? 1 : 0;
+        int exp_a = isalpha(c) ? 1 : 0;
         int got_a = ft_isalpha(c);
         TEST_ASSERT(got_a == exp_a, "ft_isalpha with out-of-range");
-        int exp_d = isdigit((unsigned char)c) ? 1 : 0;
+        int exp_d = isdigit(c) ? 1 : 0;
         int got_d = ft_isdigit(c);
         TEST_ASSERT(got_d == exp_d, "ft_isdigit with out-of-range");
-        int exp_p = isprint((unsigned char)c) ? 1 : 0;
+        int exp_p = isprint(c) ? 1 : 0;
         int got_p = ft_isprint(c);
         TEST_ASSERT(got_p == exp_p, "ft_isprint with out-of-range");
-        int exp_al = isalnum((unsigned char)c) ? 1 : 0;
+        int exp_al = isalnum(c) ? 1 : 0;
         int got_al = ft_isalnum(c);
         TEST_ASSERT(got_al == exp_al, "ft_isalnum with out-of-range");
         int exp_asc = (c >= 0 && c <= 127) ? 1 : 0;
